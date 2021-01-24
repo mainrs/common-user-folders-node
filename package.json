@@ -1,6 +1,6 @@
 {
   "name": "@sirwindfield/common-user-folders",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "napi": {
     "name": "common-user-folders",
@@ -63,10 +63,5 @@
     "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
     "version": "napi version"
-  },
-  "optionalDependencies": {
-    "@sirwindfield/common-user-folders-win32-x64-msvc": "^0.0.1",
-    "@sirwindfield/common-user-folders-darwin-x64": "^0.0.1",
-    "@sirwindfield/common-user-folders-linux-x64-gnu": "^0.0.1"
   }
 }
