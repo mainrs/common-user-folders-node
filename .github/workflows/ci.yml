@@ -1,15 +1,15 @@
 name: CI
 
 env:
-  DEBUG: 'napi:*'
-  APP_NAME: 'common-user-folders'
+  DEBUG: "napi:*"
+  APP_NAME: "common-user-folders"
 
 on:
   push:
     branches:
       - main
     tags-ignore:
-      - '**'
+      - "**"
   pull_request:
 
 jobs:
@@ -63,13 +63,13 @@ jobs:
           path: node_modules
           key: npm-cache-${{ matrix.os }}-node@14-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
-      - name: 'Build'
+      - name: "Build"
         run: yarn build
         env:
-          MACOSX_DEPLOYMENT_TARGET: '10.13'
+          MACOSX_DEPLOYMENT_TARGET: "10.13"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -108,7 +108,7 @@ jobs:
           path: node_modules
           key: npm-cache-test-${{ matrix.os }}-node@${{ matrix.node }}-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download artifacts
@@ -155,7 +155,7 @@ jobs:
           path: node_modules
           key: npm-cache-publish-ubuntu-latest-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download all artifacts
@@ -174,17 +174,14 @@ jobs:
         run: |
           if git log -1 --pretty=%B | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+$";
           then
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> ~/.npmrc
             npm publish --access public
           elif git log -1 --pretty=%B | grep "^[0-9]\+\.[0-9]\+\.[0-9]\+";
           then
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> ~/.npmrc
             npm publish --tag next --access public
           else
             echo "Not a release, skipping publish"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  
