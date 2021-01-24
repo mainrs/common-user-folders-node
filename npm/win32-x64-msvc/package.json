@@ -1,6 +1,6 @@
 {
   "name": "@sirwindfield/common-user-folders-win32-x64-msvc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "os": ["win32"],
   "publishConfig": {
