@@ -1,0 +1,16 @@
+{
+  "name": "@sirwindfield/common-user-folders-darwin-x64",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "common-user-folders.darwin-x64.node",
+  "files": [
+    "common-user-folders.darwin-x64.node"
+  ],
+  "engines": {
+    "node": ">= 10"
+  }
+}
