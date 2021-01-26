@@ -13,5 +13,7 @@ The public API exposes methods to retrieve those folder paths:
 
 - `audio_folder`
 - `document_folder`
-- `document_folder`
 - `desktop_folder`
+- `picture_folder`
+
+<sub>The module is used in adventurer, a beautiful cross-platform `File Explorer` and `Finder` replacement with focus on file management</sub>
