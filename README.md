@@ -8,3 +8,10 @@ Currently, the following folder paths are supported:
 - Documents
 - Desktop
 - Pictures
+
+The public API exposes methods to retrieve those folder paths:
+
+- `audio_folder`
+- `document_folder`
+- `document_folder`
+- `desktop_folder`
