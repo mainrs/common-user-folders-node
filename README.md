@@ -1,4 +1,4 @@
-# commom-user-folders-node
+# common-user-folders-node
 
 > A native node module for retrieving common user folder paths in a cross-platform matter.
 

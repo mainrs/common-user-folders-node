@@ -6,7 +6,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "repository": "https://github.com/SirWindfield/commom-user-folders-node",
+  "repository": "https://github.com/SirWindfield/common-user-folders-node",
   "cpu": ["x64"],
   "main": "common-user-folders.linux-x64-gnu.node",
   "files": ["common-user-folders.linux-x64-gnu.node"],
