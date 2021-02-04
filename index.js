@@ -1,4 +1,4 @@
-const { loadBinding } = require('@node-rs/helper')
+const { loadBinding } = require("@node-rs/helper");
 
 /**
  * __dirname means load native addon from current dir
@@ -8,4 +8,8 @@ const { loadBinding } = require('@node-rs/helper')
  * `loadBinding` helper will load `common-user-folders.[PLATFORM].node` from `__dirname` first
  * If failed to load addon, it will fallback to load from `@sirwindfield/common-user-folders-[PLATFORM]`
  */
-module.exports = loadBinding(__dirname, 'common-user-folders', '@sirwindfield/common-user-folders')
+module.exports = loadBinding(
+  __dirname,
+  "common-user-folders",
+  "@sirwindfield/common-user-folders"
+);
