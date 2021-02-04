@@ -264,7 +264,7 @@ dependencies = [
 
 [[package]]
 name = "sirwindfield_common-user-folders"
-version = "0.0.5"
+version = "0.1.0"
 dependencies = [
  "directories-next",
  "napi",
